@@ -2,7 +2,7 @@
 #define __HARDWARE_PORT_H
 
 #define KIN0_PORT		                GPIOA
-#define KIN0_PIN		                GPIO_PIN_1
+#define KIN0_PIN		                GPIO_PIN_1//
 
 #define KIN1_PORT	                    GPIOA
 #define KIN1_PIN		                GPIO_PIN_2

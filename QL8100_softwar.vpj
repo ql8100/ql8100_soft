@@ -1,0 +1,302 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	TemplateName="Other C/C++"
+	WorkingDir=".">
+	<Config
+		Name="Debug"
+		Type="cpp"
+		DebugCallbackName="gdb"
+		OutputFile="%bdQL8100_softwar"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				CaptureOutputWith="ProcessBuffer"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='cc -c -g %i %defd -o "%bd%n.o" "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link">
+				<Exec CmdLine='cc -g -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+		</Menu>
+	</Config>
+	<Config
+		Name="Release"
+		Type="cpp"
+		DebugCallbackName="gdb"
+		OutputFile="%bdQL8100_softwar"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveCurrent"
+				OutputExts="*.o"
+				RunFromDir="%rw">
+				<Exec CmdLine='cc -c -O %i %defd -o "%bd%n.o" "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link">
+				<Exec CmdLine='cc -O -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+		</Menu>
+	</Config>
+	<Rules Name="Compile">
+		<Rule
+			InputExts="*.s"
+			OutputExts="*.o"
+			LinkObject="1">
+			<Exec CmdLine='as -o "%bd%n.o" "%f"'/>
+		</Rule>
+	</Rules>
+	<CustomFolders>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d">
+		</Folder>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+		</Folder>
+		<Folder
+			Name="Resource Files"
+			Filters="*.ico;*.cur;*.dlg"/>
+		<Folder
+			Name="Bitmaps"
+			Filters="*.bmp"/>
+		<Folder
+			Name="Other Files"
+			Filters="">
+		</Folder>
+	</CustomFolders>
+	<Files AutoFolders="DirectoryView">
+		<Folder Name="Debug">
+			<F N="Debug/main.ls"/>
+			<F N="Debug/main.o"/>
+			<F N="Debug/public.ls"/>
+			<F N="Debug/public.o"/>
+			<F N="Debug/ql8100_software.elf"/>
+			<F N="Debug/ql8100_software.lkf"/>
+			<F N="Debug/ql8100_software.map"/>
+			<F N="Debug/ql8100_software.s19"/>
+			<F N="Debug/ql8100_software.sm8"/>
+			<F N="Debug/stm8_interrupt_vector.ls"/>
+			<F N="Debug/stm8_interrupt_vector.o"/>
+			<F N="Debug/stm8s_adc1.ls"/>
+			<F N="Debug/stm8s_adc1.o"/>
+			<F N="Debug/stm8s_awu.ls"/>
+			<F N="Debug/stm8s_awu.o"/>
+			<F N="Debug/stm8s_beep.ls"/>
+			<F N="Debug/stm8s_beep.o"/>
+			<F N="Debug/stm8s_clk.ls"/>
+			<F N="Debug/stm8s_clk.o"/>
+			<F N="Debug/stm8s_exti.ls"/>
+			<F N="Debug/stm8s_exti.o"/>
+			<F N="Debug/stm8s_flash.ls"/>
+			<F N="Debug/stm8s_flash.o"/>
+			<F N="Debug/stm8s_gpio.ls"/>
+			<F N="Debug/stm8s_gpio.o"/>
+			<F N="Debug/stm8s_i2c.ls"/>
+			<F N="Debug/stm8s_i2c.o"/>
+			<F N="Debug/stm8s_it.ls"/>
+			<F N="Debug/stm8s_it.o"/>
+			<F N="Debug/stm8s_itc.ls"/>
+			<F N="Debug/stm8s_itc.o"/>
+			<F N="Debug/stm8s_iwdg.ls"/>
+			<F N="Debug/stm8s_iwdg.o"/>
+			<F N="Debug/stm8s_rst.ls"/>
+			<F N="Debug/stm8s_rst.o"/>
+			<F N="Debug/stm8s_spi.ls"/>
+			<F N="Debug/stm8s_spi.o"/>
+			<F N="Debug/stm8s_tim1.ls"/>
+			<F N="Debug/stm8s_tim1.o"/>
+			<F N="Debug/stm8s_tim2.ls"/>
+			<F N="Debug/stm8s_tim2.o"/>
+			<F N="Debug/stm8s_tim3.ls"/>
+			<F N="Debug/stm8s_tim3.o"/>
+			<F N="Debug/stm8s_tim4.ls"/>
+			<F N="Debug/stm8s_tim4.o"/>
+			<F N="Debug/stm8s_uart2.ls"/>
+			<F N="Debug/stm8s_uart2.o"/>
+			<F N="Debug/stm8s_wwdg.ls"/>
+			<F N="Debug/stm8s_wwdg.o"/>
+			<F N="Debug/use_gpio.ls"/>
+			<F N="Debug/use_gpio.o"/>
+			<F N="Debug/use_i2c.ls"/>
+			<F N="Debug/use_i2c.o"/>
+			<F N="Debug/use_uart.ls"/>
+			<F N="Debug/use_uart.o"/>
+		</Folder>
+		<Folder Name="lib_stm8">
+			<Folder Name="inc">
+				<F N="lib_stm8/inc/stm8s.h"/>
+				<F N="lib_stm8/inc/stm8s_adc1.h"/>
+				<F N="lib_stm8/inc/stm8s_adc2.h"/>
+				<F N="lib_stm8/inc/stm8s_awu.h"/>
+				<F N="lib_stm8/inc/stm8s_beep.h"/>
+				<F N="lib_stm8/inc/stm8s_can.h"/>
+				<F N="lib_stm8/inc/stm8s_clk.h"/>
+				<F N="lib_stm8/inc/stm8s_exti.h"/>
+				<F N="lib_stm8/inc/stm8s_flash.h"/>
+				<F N="lib_stm8/inc/stm8s_gpio.h"/>
+				<F N="lib_stm8/inc/stm8s_i2c.h"/>
+				<F N="lib_stm8/inc/stm8s_itc.h"/>
+				<F N="lib_stm8/inc/stm8s_iwdg.h"/>
+				<F N="lib_stm8/inc/stm8s_rst.h"/>
+				<F N="lib_stm8/inc/stm8s_spi.h"/>
+				<F N="lib_stm8/inc/stm8s_tim1.h"/>
+				<F N="lib_stm8/inc/stm8s_tim2.h"/>
+				<F N="lib_stm8/inc/stm8s_tim3.h"/>
+				<F N="lib_stm8/inc/stm8s_tim4.h"/>
+				<F N="lib_stm8/inc/stm8s_tim5.h"/>
+				<F N="lib_stm8/inc/stm8s_tim6.h"/>
+				<F N="lib_stm8/inc/stm8s_uart1.h"/>
+				<F N="lib_stm8/inc/stm8s_uart2.h"/>
+				<F N="lib_stm8/inc/stm8s_uart3.h"/>
+				<F N="lib_stm8/inc/stm8s_wwdg.h"/>
+			</Folder>
+			<Folder Name="src">
+				<F N="lib_stm8/src/stm8s_adc1.c"/>
+				<F N="lib_stm8/src/stm8s_adc2.c"/>
+				<F N="lib_stm8/src/stm8s_awu.c"/>
+				<F N="lib_stm8/src/stm8s_beep.c"/>
+				<F N="lib_stm8/src/stm8s_can.c"/>
+				<F N="lib_stm8/src/stm8s_clk.c"/>
+				<F N="lib_stm8/src/stm8s_exti.c"/>
+				<F N="lib_stm8/src/stm8s_flash.c"/>
+				<F N="lib_stm8/src/stm8s_gpio.c"/>
+				<F N="lib_stm8/src/stm8s_i2c.c"/>
+				<F N="lib_stm8/src/stm8s_itc.c"/>
+				<F N="lib_stm8/src/stm8s_iwdg.c"/>
+				<F N="lib_stm8/src/stm8s_rst.c"/>
+				<F N="lib_stm8/src/stm8s_spi.c"/>
+				<F N="lib_stm8/src/stm8s_tim1.c"/>
+				<F N="lib_stm8/src/stm8s_tim2.c"/>
+				<F N="lib_stm8/src/stm8s_tim3.c"/>
+				<F N="lib_stm8/src/stm8s_tim4.c"/>
+				<F N="lib_stm8/src/stm8s_tim5.c"/>
+				<F N="lib_stm8/src/stm8s_tim6.c"/>
+				<F N="lib_stm8/src/stm8s_uart1.c"/>
+				<F N="lib_stm8/src/stm8s_uart2.c"/>
+				<F N="lib_stm8/src/stm8s_uart3.c"/>
+				<F N="lib_stm8/src/stm8s_wwdg.c"/>
+			</Folder>
+		</Folder>
+		<Folder Name="ql8100_software_Programmer">
+			<F N="ql8100_software_Programmer/ql8100_software_STVP.stp"/>
+			<F N="ql8100_software_Programmer/ql8100_software_STVP_OPTION BYTE.hex"/>
+		</Folder>
+		<Folder Name="Release">
+			<F N="Release/ql8100_software.lkf"/>
+		</Folder>
+		<F N=".gitattributes"/>
+		<F N=".gitignore"/>
+		<F N="checkres.spy"/>
+		<F N="group.h"/>
+		<F N="hardware_port.h"/>
+		<F N="main.c"/>
+		<F N="public.c"/>
+		<F N="public.h"/>
+		<F N="QL8100_softwar.vpj"/>
+		<F N="QL8100_softwar.vpw"/>
+		<F N="QL8100_softwar.vpwhist"/>
+		<F N="QL8100_softwar.vtg"/>
+		<F N="ql8100_software.dep"/>
+		<F N="ql8100_software.pdb"/>
+		<F N="ql8100_software.stp"/>
+		<F N="QL8100_software.stw"/>
+		<F N="QL8100_software.wdb"/>
+		<F N="QL8100_software.wed"/>
+		<F N="stm8_interrupt_vector.c"/>
+		<F N="stm8s_conf.h"/>
+		<F N="stm8s_it.c"/>
+		<F N="stm8s_it.h"/>
+		<F N="TAGS.txt"/>
+		<F N="TAGS_Filelist.txt"/>
+		<F N="ts12_touch.c"/>
+		<F N="ts12_touch.h"/>
+		<F N="use_gpio.c"/>
+		<F N="use_gpio.h"/>
+		<F N="use_i2c.c"/>
+		<F N="use_i2c.h"/>
+		<F N="use_uart.c"/>
+		<F N="use_uart.h"/>
+	</Files>
+</Project>

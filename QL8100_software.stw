@@ -1,0 +1,12 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=ql8100_software.stp
+Dependencies=
+[Options]
+ActiveProject=ql8100_software
+ActiveConfig=Debug
+AddSortedElements=1
